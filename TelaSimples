@@ -1,0 +1,37 @@
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a new JFrame (window)
+        JFrame frame = new JFrame("Simple GUI");
+
+        // Set the size of the window
+        frame.setSize(400, 300);
+
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+
+        int centerX = (screenSize.width - frame.getWidth()) /2;
+        int centerY = (screenSize.height - frame.getHeight()) /2;
+
+        frame.setLocation(centerX, centerY);
+
+        // Create a new JLabel (text label)
+        JLabel label = new JLabel("Hello World!");
+
+        label.setFont(new Font("Arial", Font.BOLD, 24));
+        label.setHorizontalAlignment(JLabel.CENTER);
+
+        // Add the label to the content pane of the window
+        frame.getContentPane().add(label);
+
+        // Set the default close operation (exit when the window is closed)
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Make the window visible
+        frame.setVisible(true);
+    }
+}
